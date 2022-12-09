@@ -6,22 +6,35 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 
 import Welcome from "./src/screens/welcome/Welcome";
-
+import Login from './src/screens/login/Login';
 
 export default function App() {
   const Stack = createStackNavigator();
+  const screens = [
+    {
+      screen: Welcome,
+      title: "welcomeScreen",
+    },
+    {
+      screen: Login,
+      title: "loginScreen",
+    },
+  ];
 
   return (
     <NavigationContainer>
       <SafeAreaProvider>
         <Stack.Navigator>
-          <Stack.Screen
-            name="WelcomeScreen"
-            component={Welcome}
-            options={{
-              headerShown: false,
-            }}
-          />
+          {screens.map((screen, index) => (
+            <Stack.Screen
+              key={index}
+              name={screen.title}
+              component={screen.screen}
+              options={{
+                headerShown: false,
+              }}
+            />
+          ))}
         </Stack.Navigator>
       </SafeAreaProvider>
     </NavigationContainer>
