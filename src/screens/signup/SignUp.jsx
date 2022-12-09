@@ -12,7 +12,7 @@ import React from "react";
 import { useNavigation } from "@react-navigation/native";
 import { Icon } from "react-native-elements";
 
-const Login = () => {
+const SignUp = () => {
   const naviagtion = useNavigation();
   return (
     <SafeAreaProvider>
@@ -20,9 +20,25 @@ const Login = () => {
         style={tw`bg-white h-full flex items-center justify-center`}
       >
         <View>
-          <Text style={tw`text-2xl text-center font-semibold mb-4`}>
-            Login to your account
+          <Text
+            style={tw`text-2xl text-center font-semibold mb-4 flex flex-col items-center justify-center`}
+          >
+            Create an account
           </Text>
+          <View style={styles.inputContainer}>
+            <Icon
+              style={styles.icon}
+              type="antdesign"
+              color="#303030"
+              name="user"
+            />
+            <TextInput
+              style={tw`pl-4 w-full`}
+              placeholder="Enter your name"
+              keyboardType="default"
+            />
+          </View>
+
           <View style={styles.inputContainer}>
             <Icon
               style={styles.icon}
@@ -52,22 +68,22 @@ const Login = () => {
           </View>
           <TouchableOpacity
             style={tw`relative`}
-            onPress={() => naviagtion.navigate("welcomeScreen")}
+            onPress={() => naviagtion.navigate("signupScreen")}
           >
             <Text
               style={tw`text-white bg-gray-800 p-3 mx-auto text-center w-full  absolute -bottom-32 rounded-full`}
             >
-              Login
+              Create
             </Text>
           </TouchableOpacity>
           <TouchableOpacity>
             <Text style={styles?.text}>
-              Don't you have an account?{" "}
+              Don you have an account?{" "}
               <Text
                 style={styles.link}
-                onPress={() => naviagtion.navigate("signUpScreen")}
+                onPress={() => naviagtion.navigate("loginScreen")}
               >
-                Sign Up
+                Login
               </Text>
             </Text>
           </TouchableOpacity>
@@ -77,7 +93,7 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default SignUp;
 
 const styles = StyleSheet.create({
   inputContainer: {
