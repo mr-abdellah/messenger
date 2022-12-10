@@ -1,6 +1,7 @@
 {
   "expo": {
-    "name": "messenger",
+    "name": "messengerApp",
+    "description": "Messenger, make your life easier",
     "slug": "messenger",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -24,10 +25,16 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "com.mrabdellah.messenger"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "5d40c0b0-49f2-42a2-b3b4-06b7fdd79fa2"
+      }
     }
   }
 }

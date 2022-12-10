@@ -13,6 +13,7 @@ import Login from "./src/screens/login/Login";
 import SignUp from "./src/screens/signup/SignUp";
 import Messages from "./src/screens/messages/Messages";
 import { useCallback, useEffect } from "react";
+import Conversation from "./src/screens/conversation/Conversation";
 
 export default function App() {
   let [fontsLoaded] = useFonts({
@@ -60,6 +61,10 @@ export default function App() {
     {
       screen: Messages,
       title: "messagesScreen",
+    },
+    {
+      screen: Conversation,
+      title: `conversationScreen`,
     },
   ];
 
