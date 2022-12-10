@@ -2,7 +2,6 @@ import {
   StyleSheet,
   Text,
   View,
-  Image,
   TouchableOpacity,
   TextInput,
 } from "react-native";
@@ -52,10 +51,17 @@ const Login = () => {
           </View>
           <TouchableOpacity
             style={tw`relative`}
-            onPress={() => naviagtion.navigate("welcomeScreen")}
+            onPress={() => naviagtion.navigate("messagesScreen")}
           >
             <Text
-              style={tw`text-white bg-gray-800 p-3 mx-auto text-center w-full  absolute -bottom-32 rounded-full`}
+              style={[
+                tw`text-white p-3 mx-auto text-center w-full absolute mt-10 rounded-full`,
+                {
+                  fontFamily: "SF-Medium",
+                  fontSize: 19,
+                  backgroundColor: "#303030",
+                },
+              ]}
             >
               Login
             </Text>
