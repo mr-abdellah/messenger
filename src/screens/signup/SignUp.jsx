@@ -20,7 +20,10 @@ const SignUp = () => {
       >
         <View>
           <Text
-            style={tw`text-2xl text-center font-semibold mb-4 flex flex-col items-center justify-center`}
+            style={[
+              tw`text-center mb-4 flex flex-col items-center justify-center`,
+              { fontFamily: "SF-Regular", fontWeight: "500", fontSize: 24 },
+            ]}
           >
             Create an account
           </Text>
@@ -120,7 +123,9 @@ const styles = StyleSheet.create({
   },
   text: {
     color: "#9E9F9F",
-    fontSize: 18,
+    fontFamily: "SF-Regular",
+    fontSize: 16,
+    textAlign: "center",
   },
   link: {
     color: "#303030",

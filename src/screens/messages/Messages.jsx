@@ -73,7 +73,10 @@ const Messages = () => {
       >
         <View style={styles.topBar}>
           <Text
-            style={[tw`text-xl`, { fontFamily: "SF-Medium", letterSpacing: 1 }]}
+            style={[
+              tw``,
+              { fontFamily: "SF-Regular", fontWeight: "500", fontSize: 24 },
+            ]}
           >
             Messages
           </Text>

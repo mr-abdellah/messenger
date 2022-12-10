@@ -19,7 +19,12 @@ const Login = () => {
         style={tw`bg-white h-full flex items-center justify-center`}
       >
         <View>
-          <Text style={tw`text-2xl text-center font-semibold mb-4`}>
+          <Text
+            style={[
+              tw`text-2xl text-center mb-4`,
+              { fontFamily: "SF-Regular" },
+            ]}
+          >
             Login to your account
           </Text>
           <View style={styles.inputContainer}>
@@ -30,9 +35,10 @@ const Login = () => {
               name="mail"
             />
             <TextInput
-              style={tw`pl-4 w-full`}
+              style={[tw`pl-4 w-full`, { fontFamily: "SF-Regular" }]}
               placeholder="Enter your email"
               keyboardType="default"
+              placeholderTextColor="#303030"
             />
           </View>
 
@@ -44,9 +50,11 @@ const Login = () => {
               name="lock"
             />
             <TextInput
-              style={tw`pl-4 w-full`}
+              style={[tw`pl-4 w-full`, { fontFamily: "SF-Regular" }]}
               placeholder="Enter your password"
               keyboardType="default"
+              placeholderTextColor="#303030"
+              secureTextEntry={true}
             />
           </View>
           <TouchableOpacity
@@ -104,7 +112,8 @@ const styles = StyleSheet.create({
   },
   text: {
     color: "#9E9F9F",
-    fontSize: 18,
+    fontFamily: "SF-Regular",
+    fontSize: 16,
   },
   link: {
     color: "#303030",
