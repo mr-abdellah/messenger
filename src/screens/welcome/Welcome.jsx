@@ -29,7 +29,7 @@ const Welcome = () => {
             onPress={() => naviagtion.navigate('loginScreen')}
           >
             <Text
-              style={tw`text-white bg-gray-800 p-3 mx-auto text-center w-full  absolute -bottom-32 rounded-full`}
+              style={tw`text-white bg-gray-800 p-3 mx-auto text-center w-full  absolute mt-10 rounded-full`}
             >
               Continue with email
             </Text>
