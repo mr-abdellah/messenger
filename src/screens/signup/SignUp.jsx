@@ -4,101 +4,78 @@ import {
   View,
   TouchableOpacity,
   TextInput,
+  SafeAreaView,
 } from "react-native";
-import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import tw from "tailwind-react-native-classnames";
 import React from "react";
 import { useNavigation } from "@react-navigation/native";
-import { Icon } from "react-native-elements";
 
 const SignUp = () => {
   const naviagtion = useNavigation();
   return (
-    <SafeAreaProvider>
-      <SafeAreaView
-        style={tw`bg-white h-full flex items-center justify-center`}
-      >
-        <View>
+    <SafeAreaView style={tw`bg-white h-full flex items-center justify-center`}>
+      <View>
+        <Text
+          style={[
+            tw`text-center mb-4 flex flex-col items-center justify-center`,
+            { fontFamily: "SF-Regular", fontWeight: "500", fontSize: 24 },
+          ]}
+        >
+          Create an account
+        </Text>
+        <View style={styles.inputContainer}>
+          <TextInput
+            style={tw`pl-4 w-full`}
+            placeholder="Enter your name"
+            keyboardType="default"
+          />
+        </View>
+
+        <View style={styles.inputContainer}>
+          <TextInput
+            style={tw`pl-4 w-full`}
+            placeholder="Enter your email"
+            keyboardType="default"
+          />
+        </View>
+
+        <View style={styles.inputContainer}>
+          <TextInput
+            style={tw`pl-4 w-full`}
+            placeholder="Enter your password"
+            keyboardType="default"
+          />
+        </View>
+        <TouchableOpacity
+          style={tw`relative`}
+          onPress={() => naviagtion.navigate("messagesScreen")}
+        >
           <Text
             style={[
-              tw`text-center mb-4 flex flex-col items-center justify-center`,
-              { fontFamily: "SF-Regular", fontWeight: "500", fontSize: 24 },
+              tw`text-white p-3 mx-auto text-center w-full absolute mt-10 rounded-full`,
+              {
+                fontFamily: "SF-Medium",
+                fontSize: 19,
+                backgroundColor: "#303030",
+              },
             ]}
           >
-            Create an account
+            Create
           </Text>
-          <View style={styles.inputContainer}>
-            <Icon
-              style={styles.icon}
-              type="antdesign"
-              color="#303030"
-              name="user"
-            />
-            <TextInput
-              style={tw`pl-4 w-full`}
-              placeholder="Enter your name"
-              keyboardType="default"
-            />
-          </View>
-
-          <View style={styles.inputContainer}>
-            <Icon
-              style={styles.icon}
-              type="antdesign"
-              color="#303030"
-              name="mail"
-            />
-            <TextInput
-              style={tw`pl-4 w-full`}
-              placeholder="Enter your email"
-              keyboardType="default"
-            />
-          </View>
-
-          <View style={styles.inputContainer}>
-            <Icon
-              style={styles.icon}
-              type="antdesign"
-              color="#303030"
-              name="lock"
-            />
-            <TextInput
-              style={tw`pl-4 w-full`}
-              placeholder="Enter your password"
-              keyboardType="default"
-            />
-          </View>
-          <TouchableOpacity
-            style={tw`relative`}
-            onPress={() => naviagtion.navigate("messagesScreen")}
-          >
+        </TouchableOpacity>
+        <TouchableOpacity>
+          <Text style={styles?.text}>
+            Don you have an account?{" "}
             <Text
-              style={[
-                tw`text-white p-3 mx-auto text-center w-full absolute mt-10 rounded-full`,
-                {
-                  fontFamily: "SF-Medium",
-                  fontSize: 19,
-                  backgroundColor: "#303030",
-                },
-              ]}
+              style={styles.link}
+              onPress={() => naviagtion.navigate("loginScreen")}
             >
-              Create
+              Login
             </Text>
-          </TouchableOpacity>
-          <TouchableOpacity>
-            <Text style={styles?.text}>
-              Don you have an account?{" "}
-              <Text
-                style={styles.link}
-                onPress={() => naviagtion.navigate("loginScreen")}
-              >
-                Login
-              </Text>
-            </Text>
-          </TouchableOpacity>
-        </View>
-      </SafeAreaView>
-    </SafeAreaProvider>
+          </Text>
+        </TouchableOpacity>
+      </View>
+    </SafeAreaView>
   );
 };
 
